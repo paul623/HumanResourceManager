@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
 <!DOCTYPE html>
 <html>
   
@@ -24,7 +25,7 @@
   
   <body>
     <div class="x-body">
-        <form class="layui-form" method="POST" id="deptForm"  action="${ctx}/employee/add">
+        <form class="layui-form" method="POST" id="deptForm"  action="/employee/add">
         <input type="hidden" name="id" id="id" value="${job.id }" >
           <div class="layui-form-item" >
               <label for="username" class="layui-form-label">
@@ -41,8 +42,8 @@
                   <span class="x-red">*</span>身份证号码
               </label>
               <div class="layui-input-inline">
-                  <input type="text" id="card_id" name="card_id" required="" lay-verify="required"
-                  autocomplete="off" class="layui-input" value="${job.card_id }">
+                  <input type="text" id="cardId" name="cardId" required="" lay-verify="required"
+                  autocomplete="off" class="layui-input" value="${job.cardId }">
               </div>
           </div>
            <div class="layui-form-item">
@@ -50,8 +51,10 @@
                   <span class="x-red">*</span>性别
               </label>
               <div class="layui-input-inline">
-                  <input type="text" id="sex" name="sex" required="" lay-verify="required"
-                  autocomplete="off" class="layui-input" value="${job.sex }">
+                  <select id="sex" name="sex">
+                      <option value="1">男</option>
+                      <option value="0">女</option>
+                  </select>
               </div>
           </div>
            <div class="layui-form-item">
@@ -95,9 +98,9 @@
                   <span class="x-red">*</span>职位
               </label>
               <div class="layui-input-inline">
-                  <select id="job_id" name="job_id" class="valid" >
+                  <select id="jobId" name="jobId" class="valid" >
                     <c:forEach items="${requestScope.job_list}" var="line" varStatus="stat">
-                    <option value="${line.id}" <c:if test="${job.job_id == line.id }">selected</c:if>>${line.name}</option>
+                    <option value="${line.id}" <c:if test="${job.jobId == line.id }">selected</c:if>>${line.name}</option>
                     </c:forEach>
                   </select>
               </div>
@@ -107,9 +110,9 @@
                   <span class="x-red">*</span>部门
               </label>
               <div class="layui-input-inline">
-                  <select id="dept_id" name="dept_id" class="valid">
+                  <select id="deptId" name="deptId" class="valid">
                     <c:forEach items="${requestScope.dept_list}" var="line" varStatus="stat">
-                    <option value="${line.id}" <c:if test="${job.dept_id == line.id }">selected</c:if>>${line.name}</option>
+                    <option value="${line.id}" <c:if test="${job.deptId == line.id }">selected</c:if>>${line.name}</option>
                     </c:forEach>
                   </select>
               </div>
@@ -149,7 +152,6 @@
           form.on('submit(add)', function(data){
         	  
             console.log(data);
-            //发异步，把数据提交给php
             layer.alert("增加成功", {icon: 6},function () {
             	document.getElementById('deptForm').submit();
                 // 获得frame索引

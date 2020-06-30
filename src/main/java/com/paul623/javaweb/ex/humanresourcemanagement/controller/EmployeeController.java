@@ -60,6 +60,7 @@ public class EmployeeController {
     }
     @PostMapping("/employee/add")
     public ModelAndView add(ModelAndView mv,@ModelAttribute Employee job ,Integer id){
+        System.out.println(job);
         if(id!=null){
             employeeService.update_EmployeeInfo(job);
         }else{

@@ -1,34 +1,37 @@
 package com.paul623.javaweb.ex.humanresourcemanagement.entity;
 
-public class Employee implements java.io.Serializable{
+import java.io.Serializable;
+
+public class Employee implements Serializable {
 	private Integer id;
-	private Integer job_id;
-	private Integer dept_id;
-	public Integer getJob_id() {
-		return job_id;
+	private Integer jobId;
+	private Integer deptId;
+
+	public Integer getJobId() {
+		return jobId;
 	}
 
-	public void setJob_id(Integer job_id) {
-		this.job_id = job_id;
+	public void setJobId(Integer jobId) {
+		this.jobId = jobId;
 	}
 
-	public Integer getDept_id() {
-		return dept_id;
+	public Integer getDeptId() {
+		return deptId;
 	}
 
-	public void setDept_id(Integer dept_id) {
-		this.dept_id = dept_id;
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
 	}
 
 	private Dept dept;
 	private Job job;
 	private String name;
-	private String card_id;
+	private String cardId;
 	private String address;
-	private String post_code;
+	private String postCode;
 	private String tel;
 	private String phone;
-	private String qq_num;
+	private String qqNum;
 	private String email;
 	private Integer sex;
 	private String party;
@@ -39,10 +42,19 @@ public class Employee implements java.io.Serializable{
 	private String speciality;
 	private String hobby;
 	private String remark;
-	private String create_date;
-	
-	public Employee(){
-		super();
+	private String createDate;
+	private String sexStr;
+
+	public String getSexStr() {
+		if(sex==1){
+			return "男";
+		}else {
+			return "女";
+		}
+	}
+
+	public void setSexStr(String sexStr) {
+		this.sexStr = sexStr;
 	}
 
 	public Integer getId() {
@@ -77,12 +89,12 @@ public class Employee implements java.io.Serializable{
 		this.name = name;
 	}
 
-	public String getCard_id() {
-		return card_id;
+	public String getCardId() {
+		return cardId;
 	}
 
-	public void setCard_id(String card_id) {
-		this.card_id = card_id;
+	public void setCardId(String cardId) {
+		this.cardId = cardId;
 	}
 
 	public String getAddress() {
@@ -93,12 +105,12 @@ public class Employee implements java.io.Serializable{
 		this.address = address;
 	}
 
-	public String getPost_code() {
-		return post_code;
+	public String getPostCode() {
+		return postCode;
 	}
 
-	public void setPost_code(String post_code) {
-		this.post_code = post_code;
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
 	}
 
 	public String getTel() {
@@ -117,12 +129,12 @@ public class Employee implements java.io.Serializable{
 		this.phone = phone;
 	}
 
-	public String getQq_num() {
-		return qq_num;
+	public String getQqNum() {
+		return qqNum;
 	}
 
-	public void setQq_num(String qq_num) {
-		this.qq_num = qq_num;
+	public void setQqNum(String qqNum) {
+		this.qqNum = qqNum;
 	}
 
 	public String getEmail() {
@@ -197,29 +209,29 @@ public class Employee implements java.io.Serializable{
 		this.remark = remark;
 	}
 
-	public String getCreate_date() {
-		return create_date;
+	public String getCreateDate() {
+		return createDate;
 	}
 
-	public void setCreate_date(String create_date) {
-		this.create_date = create_date;
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
 	}
 
 	@Override
 	public String toString() {
 		return "Employee{" +
 				"id=" + id +
-				", job_id=" + job_id +
-				", dept_id=" + dept_id +
+				", jobId=" + jobId +
+				", deptId=" + deptId +
 				", dept=" + dept +
 				", job=" + job +
 				", name='" + name + '\'' +
-				", card_id='" + card_id + '\'' +
+				", cardId='" + cardId + '\'' +
 				", address='" + address + '\'' +
-				", post_code='" + post_code + '\'' +
+				", postCode='" + postCode + '\'' +
 				", tel='" + tel + '\'' +
 				", phone='" + phone + '\'' +
-				", qq_num='" + qq_num + '\'' +
+				", qqNum='" + qqNum + '\'' +
 				", email='" + email + '\'' +
 				", sex=" + sex +
 				", party='" + party + '\'' +
@@ -229,7 +241,7 @@ public class Employee implements java.io.Serializable{
 				", speciality='" + speciality + '\'' +
 				", hobby='" + hobby + '\'' +
 				", remark='" + remark + '\'' +
-				", create_date='" + create_date + '\'' +
+				", createDate='" + createDate + '\'' +
 				'}';
 	}
 }

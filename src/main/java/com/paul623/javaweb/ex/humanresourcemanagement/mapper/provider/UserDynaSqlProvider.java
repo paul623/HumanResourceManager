@@ -23,8 +23,8 @@ public class UserDynaSqlProvider {
 						if(job.getUsername()!=null){
 							VALUES("username","#{username}");
 						}
-						if(job.getCreate_date()!=null){
-							VALUES("create_date","#{create_date}");
+						if(job.getCreatedate()!=null){
+							VALUES("createdate","#{createdate}");
 						}
 					
 						

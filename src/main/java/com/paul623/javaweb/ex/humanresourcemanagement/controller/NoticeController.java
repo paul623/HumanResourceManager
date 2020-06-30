@@ -1,7 +1,10 @@
 package com.paul623.javaweb.ex.humanresourcemanagement.controller;
 
 import com.paul623.javaweb.ex.humanresourcemanagement.entity.Notice;
+import com.paul623.javaweb.ex.humanresourcemanagement.entity.User;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.NoticeService;
+import com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants;
+import com.paul623.javaweb.ex.humanresourcemanagement.utils.DateHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -35,6 +39,7 @@ public class NoticeController {
         if (content!=null){
             job_list = noticeService.get_NoticeLikeList(content);
         }
+        System.out.println(job_list);
         model.addAttribute("list",job_list);
         return "notice/list";
     }
@@ -47,8 +52,11 @@ public class NoticeController {
         return "/notice/add";
     }
     @PostMapping("/notice/add")
-    public ModelAndView add(ModelAndView mv, @ModelAttribute Notice notice , Integer id){
-        System.out.println(id);
+    public ModelAndView add(ModelAndView mv, @ModelAttribute Notice notice , Integer id, HttpSession session){
+        User user= (User) session.getAttribute(Constants.USER_SESSION);
+        notice.setUser(user);
+        notice.setUserId(user.getId());
+        notice.setCreateDate(DateHelper.getCurDate());
         if(id!=null){
             noticeService.update_NoticeInfo(notice);
         }else{
@@ -59,7 +67,6 @@ public class NoticeController {
     }
     @RequestMapping("/notice/delete")
     public void delete(Integer id){
-        System.out.println(id);
         if(id!=null){
             noticeService.delete_NoticeInfo(id);
         }

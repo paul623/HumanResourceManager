@@ -48,7 +48,6 @@ public class JobController {
     }
     @PostMapping("/job/add")
     public ModelAndView add(ModelAndView mv, @ModelAttribute Job job , Integer id){
-        System.out.println(id);
         if(id!=null){
             jobService.update_JobInfo(job);
         }else{
@@ -59,7 +58,6 @@ public class JobController {
     }
     @RequestMapping("/job/delete")
     public void delete(Integer id){
-        System.out.println(id);
         if(id!=null){
             jobService.delete_JobInfo(id);
         }

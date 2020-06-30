@@ -2,6 +2,7 @@ package com.paul623.javaweb.ex.humanresourcemanagement.service;
 
 import com.paul623.javaweb.ex.humanresourcemanagement.entity.Notice;
 import com.paul623.javaweb.ex.humanresourcemanagement.mapper.NoticeMapper;
+import com.paul623.javaweb.ex.humanresourcemanagement.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +12,27 @@ import java.util.List;
 public class NoticeService {
     @Autowired
     NoticeMapper noticeMapper;
+    @Autowired
+    UserMapper userMapper;
 
     public List<Notice> get_NoticeList() {
-        return noticeMapper.get_List();
+        List<Notice> notices=noticeMapper.get_List();
+        for(Notice i:notices){
+            if(i.getUserId()!=null){
+                i.setUser(userMapper.get_Info(i.getUserId()));
+            }
+        }
+        return notices;
     }
 
     public List<Notice> get_NoticeLikeList(String content) {
-        return noticeMapper.get_LikeList(content);
+        List<Notice> notices=noticeMapper.get_LikeList(content);
+        for(Notice i:notices){
+            if(i.getUserId()!=null){
+                i.setUser(userMapper.get_Info(i.getUserId()));
+            }
+        }
+        return notices;
     }
 
     public Notice get_NoticeInfo(Integer id) {

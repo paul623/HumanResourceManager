@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
 <!DOCTYPE html>
 <html>
   
@@ -25,10 +26,10 @@
   <body>
     <div class="x-nav">
       <span class="layui-breadcrumb">
-        <a href="">首页</a>
-        <a href="">演示</a>
+        <a href="#">首页</a>
+        <a href="">部门管理</a>
         <a>
-          <cite>导航元素</cite></a>
+          <cite>部门列表</cite></a>
       </span>
       <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
@@ -78,7 +79,6 @@
                 <i class="layui-icon">&#xe601;</i>
               </a> -->
               <a title="编辑"  onclick="x_admin_show('编辑','/dept/add?id=${dept.id }');" href="javascript:;">
-             
                 <i class="layui-icon">&#xe642;</i>
               </a>
               <a title="删除" onclick="member_del(this,'${dept.id }')" href="javascript:;">
@@ -94,16 +94,16 @@
           
         </tbody>
       </table>
-      <div class="page">
-        <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">3</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
+        <div class="page">
+            <div>
+                <a class="prev" href="">&lt;&lt;</a>
+                <span class="current">1</span>
+                <a class="num" href="">2</a>
+                <a class="num" href="">3</a>
+                <a class="num" href="">..</a>
+                <a class="next" href="">&gt;&gt;</a>
+            </div>
         </div>
-      </div>
 
     </div>
     <script>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
 <!DOCTYPE html>
 <html>
   
@@ -35,19 +36,11 @@
     <div class="x-body">
       <div class="layui-row" style="" align="center">
         <form class="layui-form layui-col-md12 x-so" method="get" action="/employee/list">
-          <!-- <input class="layui-input" placeholder="开始日" name="start" id="start">
-          <input class="layui-input" placeholder="截止日" name="end" id="end"> -->
           <input type="text" name="content" style="width:50%;"  placeholder="请输入查找内容" autocomplete="off" class="layui-input">
           <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
         </form>
       </div>
-      <%-- <xblock>
- <!--        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button> -->
-        <button class="layui-btn" onclick="x_admin_show('添加用户','${ctx}/dept/add')"><i class="layui-icon"></i>添加</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
-      </xblock> --%>
-     
-      
+
       <table class="layui-table">
         <thead>
           <tr>
@@ -74,15 +67,15 @@
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
             <td>${dept.name }</td>
-            <td>${dept.sex }</td>
+            <td>${dept.sexStr }</td>
             <td>${dept.phone }</td>
             <td>${dept.email }</td>
             <td>${dept.job.name }</td>
             <td>${dept.education }</td>
-            <td>${dept.card_id }</td>
+            <td>${dept.cardId }</td>
             <td>${dept.dept.name }</td>
             <td>${dept.address }</td>
-            <td>${dept.create_date }</td>
+            <td>${dept.createDate }</td>
             
            <!--  <td class="td-status">
               <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td> -->
@@ -90,8 +83,7 @@
              <!--  <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
                 <i class="layui-icon">&#xe601;</i>
               </a> -->
-              <%-- <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/job/add?id=${dept.id }');" href="javascript:;"> --%>
-              <a title="编辑"  href="${ctx}/employee/add?id=${dept.id }">
+              <a title="编辑"  href="/employee/add?id=${dept.id }">
                 <i class="layui-icon">&#xe642;</i>
               </a>
               <a title="删除" onclick="member_del(this,'${dept.id }')" href="javascript:;">
@@ -107,16 +99,16 @@
           
         </tbody>
       </table>
-      <div class="page">
-        <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">3</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
+        <div class="page">
+            <div>
+                <a class="prev" href="">&lt;&lt;</a>
+                <span class="current">1</span>
+                <a class="num" href="">2</a>
+                <a class="num" href="">3</a>
+                <a class="num" href="">..</a>
+                <a class="next" href="">&gt;&gt;</a>
+            </div>
         </div>
-      </div>
 
     </div>
     <script>

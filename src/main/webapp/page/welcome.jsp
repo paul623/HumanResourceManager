@@ -13,10 +13,19 @@
         <link rel="stylesheet" href="css/font.css">
         <link rel="stylesheet" href="css/xadmin.css">
     </head>
-    <body>
+    <body >
+    <script>
+        var currentDate = new Date(<%=new java.util.Date().getTime()%>);
+        function run()
+        {
+            currentDate.setSeconds(currentDate.getSeconds()+1);
+            document.getElementById("dt").innerHTML = currentDate.toLocaleString();
+        }
+        window.setInterval("run();", 1000);
+    </script>
     <div class="x-body layui-anim layui-anim-up">
         <blockquote class="layui-elem-quote">欢迎管理员：
-            <span class="x-red">test</span>！当前时间:2018-04-25 20:50:53</blockquote>
+            <span class="x-red">${sessionScope.user_session.username}</span>！ 当前时间:<div id="dt"></div></blockquote>
         <fieldset class="layui-elem-field">
             <legend>数据统计</legend>
             <div class="layui-field-box">
@@ -28,44 +37,44 @@
                                     <ul class="layui-row layui-col-space10 layui-this">
                                         <li class="layui-col-xs2">
                                             <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>文章数</h3>
+                                                <h3>管理员</h3>
                                                 <p>
-                                                    <cite>66</cite></p>
+                                                    <cite>${sessionScope.sumData.rootUserNum}</cite></p>
                                             </a>
                                         </li>
                                         <li class="layui-col-xs2">
                                             <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>会员数</h3>
+                                                <h3>部门数</h3>
                                                 <p>
-                                                    <cite>12</cite></p>
+                                                    <cite>${sessionScope.sumData.deptNum}</cite></p>
                                             </a>
                                         </li>
                                         <li class="layui-col-xs2">
                                             <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>回复数</h3>
+                                                <h3>职位数</h3>
                                                 <p>
-                                                    <cite>99</cite></p>
+                                                    <cite>${sessionScope.sumData.jobNum}</cite></p>
                                             </a>
                                         </li>
                                         <li class="layui-col-xs2">
                                             <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>商品数</h3>
+                                                <h3>员工数</h3>
                                                 <p>
-                                                    <cite>67</cite></p>
+                                                    <cite>${sessionScope.sumData.employeeNum}</cite></p>
                                             </a>
                                         </li>
                                         <li class="layui-col-xs2">
                                             <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>文章数</h3>
+                                                <h3>公告数</h3>
                                                 <p>
-                                                    <cite>67</cite></p>
+                                                    <cite>${sessionScope.sumData.noticeNum}</cite></p>
                                             </a>
                                         </li>
                                         <li class="layui-col-xs2">
                                             <a href="javascript:;" class="x-admin-backlog-body">
-                                                <h3>文章数</h3>
+                                                <h3>文档数</h3>
                                                 <p>
-                                                    <cite>6766</cite></p>
+                                                    <cite>${sessionScope.sumData.documentNum}</cite></p>
                                             </a>
                                         </li>
                                     </ul>
@@ -83,12 +92,7 @@
                     <tbody>
                         <tr>
                             <td >
-                                <a class="x-a" href="/" target="_blank">新版x-admin 2.0上线了</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td >
-                                <a class="x-a" href="/" target="_blank">交流qq群:(519492808)</a>
+                                <a class="x-a" href="/" target="_blank">v0.0.1开始内测</a>
                             </td>
                         </tr>
                     </tbody>
@@ -101,29 +105,20 @@
                 <table class="layui-table">
                     <tbody>
                         <tr>
-                            <th>xxx版本</th>
-                            <td>1.0.180420</td></tr>
+                            <th>系统版本号</th>
+                            <td>v0.0.1</td></tr>
                         <tr>
                             <th>服务器地址</th>
-                            <td>x.xuebingsi.com</td></tr>
+                            <td>localhost:8080</td></tr>
                         <tr>
                             <th>操作系统</th>
-                            <td>WINNT</td></tr>
+                            <td>Windows/Linux</td></tr>
                         <tr>
                             <th>运行环境</th>
-                            <td>Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9</td></tr>
-                        <tr>
-                            <th>PHP版本</th>
-                            <td>5.6.27</td></tr>
-                        <tr>
-                            <th>PHP运行方式</th>
-                            <td>cgi-fcgi</td></tr>
+                            <td>jdk 1.8及以上</td></tr>
                         <tr>
                             <th>MYSQL版本</th>
-                            <td>5.5.53</td></tr>
-                        <tr>
-                            <th>ThinkPHP</th>
-                            <td>5.0.18</td></tr>
+                            <td>8.0</td></tr>
                         <tr>
                             <th>上传附件限制</th>
                             <td>2M</td></tr>
@@ -132,7 +127,7 @@
                             <td>30s</td></tr>
                         <tr>
                             <th>剩余空间</th>
-                            <td>86015.2M</td></tr>
+                            <td>/</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -143,18 +138,22 @@
                 <table class="layui-table">
                     <tbody>
                         <tr>
-                            <th>版权所有</th>
-                            <td>xxxxx(xxxx)
-                                <a href="http://www.xxx.com/" class='x-a' target="_blank">访问官网</a></td>
+                            <th>开发者</th>
+                            <td><a href="https://github.com/paul623" class='x-a' target="_blank">Paul623</a></td>
                         </tr>
                         <tr>
-                            <th>开发者</th>
-                            <td>马志斌(113664000@qq.com)</td></tr>
+                            <th>组员</th>
+                            <td>刘缘</td>
+                        </tr>
+                        <tr>
+                            <th>组员</th>
+                            <td>姜文</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </fieldset>
-        <blockquote class="layui-elem-quote layui-quote-nm">感谢layui,百度Echarts,jquery,本系统由x-admin提供技术支持。</blockquote>
+        <blockquote class="layui-elem-quote layui-quote-nm">感谢layui,jquery,本系统由paul623提供技术支持。</blockquote>
     </div>
         <script>
         var _hmt = _hmt || [];

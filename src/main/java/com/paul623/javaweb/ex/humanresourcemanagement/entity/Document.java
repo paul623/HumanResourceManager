@@ -9,10 +9,11 @@ public class Document  implements Serializable {
 	private String title;
 	private String filename;
 	private String remark;
-	private String create_date;
-	private Integer user_id;
+	private String createDate;
+	private Integer userId;
 	private MultipartFile file;
 	private User user;
+	private String fileAdd;
 
 	public Integer getId() {
 		return id;
@@ -46,20 +47,20 @@ public class Document  implements Serializable {
 		this.remark = remark;
 	}
 
-	public String getCreate_date() {
-		return create_date;
+	public String getCreateDate() {
+		return createDate;
 	}
 
-	public void setCreate_date(String create_date) {
-		this.create_date = create_date;
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
 	}
 
-	public Integer getUser_id() {
-		return user_id;
+	public Integer getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(Integer user_id) {
-		this.user_id = user_id;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public MultipartFile getFile() {
@@ -76,6 +77,17 @@ public class Document  implements Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+		if(user!=null){
+			this.userId=user.getId();
+		}
+	}
+
+	public String getFileAdd() {
+		return fileAdd;
+	}
+
+	public void setFileAdd(String fileAdd) {
+		this.fileAdd = fileAdd;
 	}
 
 	@Override
@@ -85,10 +97,11 @@ public class Document  implements Serializable {
 				", title='" + title + '\'' +
 				", filename='" + filename + '\'' +
 				", remark='" + remark + '\'' +
-				", create_date='" + create_date + '\'' +
-				", user_id=" + user_id +
+				", createDate='" + createDate + '\'' +
+				", userId=" + userId +
 				", file=" + file +
 				", user=" + user +
+				", fileAdd='" + fileAdd + '\'' +
 				'}';
 	}
 }

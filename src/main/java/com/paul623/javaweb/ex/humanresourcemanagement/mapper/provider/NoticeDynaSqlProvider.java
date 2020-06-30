@@ -17,14 +17,14 @@ public class NoticeDynaSqlProvider {
 						if(job.getTitle() != null ){
 							VALUES("title", "#{title}");
 						}
-						if(job.getUser_id()!=null){
-							VALUES("user_id","#{user_id}");
+						if(job.getUserId()!=null){
+							VALUES("userId","#{userId}");
 						}
 						if(job.getContent()!=null){
 							VALUES("content","#{content}");
 						}
-						if(job.getCreate_date()!=null){
-							VALUES("create_date","#{create_date}");
+						if(job.getCreateDate()!=null){
+							VALUES("createDate","#{createDate}");
 						}
 					
 						
@@ -40,18 +40,15 @@ public class NoticeDynaSqlProvider {
 						if(job.getTitle() != null ){
 							SET("title = #{title}");
 						}
-						if(job.getUser_id()!=null){
-							SET("user_id = #{user_id}");
+						if(job.getUserId()!=null){
+							SET("userId = #{userId}");
 						}
 						if(job.getContent()!=null){
 							SET("content = #{content}");
 						}
-						if(job.getCreate_date()!=null){
-							SET("create_date = #{create_date}");
+						if(job.getCreateDate()!=null){
+							SET("createDate = #{createDate}");
 						}
-				
-						
-						
 						WHERE(" id = #{id} ");
 					}
 				}.toString();

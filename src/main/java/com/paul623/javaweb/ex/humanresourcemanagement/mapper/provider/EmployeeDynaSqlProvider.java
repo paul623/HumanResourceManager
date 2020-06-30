@@ -17,14 +17,14 @@ public class EmployeeDynaSqlProvider {
 						if(job.getName() != null ){
 							VALUES("name", "#{name}");
 						}
-						if(job.getCard_id()!=null){
-							VALUES("card_id","#{card_id}");
+						if(job.getCardId()!=null){
+							VALUES("cardId","#{cardId}");
 						}
 						if(job.getAddress()!=null){
 							VALUES("address","#{address}");
 						}
-						if(job.getPost_code()!=null){
-							VALUES("post_code","#{post_code}");
+						if(job.getPostCode()!=null){
+							VALUES("postCode","#{postCode}");
 						}
 						if(job.getTel()!=null){
 							VALUES("tel","#{tel}");
@@ -32,8 +32,8 @@ public class EmployeeDynaSqlProvider {
 						if(job.getPhone()!=null){
 							VALUES("phone","#{phone}");
 						}
-						if(job.getQq_num()!=null){
-							VALUES("qq_nul","#{qq_num}");
+						if(job.getQqNum()!=null){
+							VALUES("qqNum","#{qqNum}");
 						}
 						if(job.getEmail()!=null){
 							VALUES("email","#{email}");
@@ -62,14 +62,14 @@ public class EmployeeDynaSqlProvider {
 						if(job.getRemark()!=null){
 							VALUES("remark","#{remark}");
 						}
-						if(job.getCreate_date()!=null){
-							VALUES("create_date","#{create_date}");
+						if(job.getCreateDate()!=null){
+							VALUES("createDate","#{createDate}");
 						}
-						if(job.getDept_id()!=null){
-							VALUES("dept_id","#{dept_id}");
+						if(job.getDeptId()!=null){
+							VALUES("deptId","#{deptId}");
 						}
-						if(job.getJob_id()!=null){
-							VALUES("job_id","#{job_id}");
+						if(job.getJobId()!=null){
+							VALUES("jobId","#{jobId}");
 						}
 					}
 				}.toString();
@@ -83,14 +83,14 @@ public class EmployeeDynaSqlProvider {
 						if(job.getName() != null ){
 							SET("name = #{name}");
 						}
-						if(job.getCard_id()!=null){
-							SET("card_id = #{card_id}");
+						if(job.getCardId()!=null){
+							SET("cardId = #{cardId}");
 						}
 						if(job.getAddress()!=null){
 							SET("address = #{address}");
 						}
-						if(job.getPost_code()!=null){
-							SET("post_code = #{post_code}");
+						if(job.getPostCode()!=null){
+							SET("postCode = #{postCode}");
 						}
 						if(job.getTel()!=null){
 							SET("tel = #{tel}");
@@ -98,8 +98,8 @@ public class EmployeeDynaSqlProvider {
 						if(job.getPhone()!=null){
 							SET("phone = #{phone}");
 						}
-						if(job.getQq_num()!=null){
-							SET("qq_nul = #{qq_num}");
+						if(job.getQqNum()!=null){
+							SET("qqNum = #{qqNum}");
 						}
 						if(job.getEmail()!=null){
 							SET("email = #{email}");
@@ -128,16 +128,15 @@ public class EmployeeDynaSqlProvider {
 						if(job.getRemark()!=null){
 							SET("remark = #{remark}");
 						}
-						if(job.getCreate_date()!=null){
-							SET("create_date = #{create_date}");
+						if(job.getCreateDate()!=null){
+							SET("createDate = #{createDate}");
 						}
-						if(job.getDept_id()!=null){
-							SET("dept_id = #{dept_id}");
+						if(job.getDeptId()!=null){
+							SET("deptId = #{deptId}");
 						}
-						if(job.getJob_id()!=null){
-							SET("job_id = #{job_id}");
+						if(job.getJobId()!=null){
+							SET("jobId = #{jobId}");
 						}
-						
 						WHERE(" id = #{id} ");
 					}
 				}.toString();

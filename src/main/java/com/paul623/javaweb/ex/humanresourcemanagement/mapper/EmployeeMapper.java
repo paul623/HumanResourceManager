@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants.EMPLOYEETABLE;
 
+
 @Mapper
 public interface EmployeeMapper {
     /**
@@ -20,6 +21,7 @@ public interface EmployeeMapper {
     //查询
     @Select("select * from "+EMPLOYEETABLE+" ")
     List<Employee> get_List();
+
     @Select("select * from "+EMPLOYEETABLE+"  where name like CONCAT('%',#{content},'%')")
     List<Employee> get_LikeList(String content);
 
@@ -27,11 +29,14 @@ public interface EmployeeMapper {
     void insert_Info(Employee employee);
 
     @Select("select * from "+EMPLOYEETABLE+" where id = #{id}")
-    Employee get_Info(Integer id);
+    public Employee get_Info(Integer id);
 
     @SelectProvider(type= EmployeeDynaSqlProvider.class,method="update_Employee")
     void update_Info(Employee employee);
     // 根据id删除部门
     @Delete(" delete from "+EMPLOYEETABLE+" where id = #{id} ")
     void delete_Info(Integer id);
+
+    @Select("select count(*) from "+EMPLOYEETABLE+" ")
+    public int getNum();
 }

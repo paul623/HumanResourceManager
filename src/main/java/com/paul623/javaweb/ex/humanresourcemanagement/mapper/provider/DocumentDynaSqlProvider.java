@@ -21,14 +21,17 @@ public class DocumentDynaSqlProvider {
 					if(dept.getRemark() != null ){
 						VALUES("remark", "#{remark}");
 					}
-					if(dept.getCreate_date() != null ){
-						VALUES("create_date", "#{create_date}");
+					if(dept.getCreateDate() != null ){
+						VALUES("createDate", "#{createDate}");
 					}
-					if(dept.getUser_id() != null ){
-						VALUES("user_id", "#{user_id}");
+					if(dept.getUserId() != null ){
+						VALUES("userId", "#{userId}");
 					}
 					if(dept.getFilename() != null ){
 						VALUES("filename", "#{filename}");
+					}
+					if(dept.getFileAdd()!=null){
+						VALUES("fileAdd", "#{fileAdd}");
 					}
 				}
 			}.toString();

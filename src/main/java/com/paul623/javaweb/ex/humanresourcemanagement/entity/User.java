@@ -8,7 +8,7 @@ public class User implements Serializable {
     private String loginname;
     private String password;
     private Integer status;
-    private String create_date;
+    private String createdate;
 
     public User() {
         super();
@@ -54,12 +54,13 @@ public class User implements Serializable {
         this.status = status;
     }
 
-    public String getCreate_date() {
-        return create_date;
+
+    public String getCreatedate() {
+        return createdate;
     }
 
-    public void setCreate_date(String create_date) {
-        this.create_date = create_date;
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate;
     }
 
     @Override
@@ -70,7 +71,7 @@ public class User implements Serializable {
                 ", loginname='" + loginname + '\'' +
                 ", password='" + password + '\'' +
                 ", status=" + status +
-                ", create_date='" + create_date + '\'' +
+                ", createdate='" + createdate + '\'' +
                 '}';
     }
 }

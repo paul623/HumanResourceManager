@@ -1,6 +1,7 @@
 package com.paul623.javaweb.ex.humanresourcemanagement.controller;
 
 import com.paul623.javaweb.ex.humanresourcemanagement.entity.User;
+import com.paul623.javaweb.ex.humanresourcemanagement.service.SumDataService;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.UserService;
 import com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService userService;
+    @Autowired
+    SumDataService sumDataService;
     // 如果在目录下输入为空，则跳转到指定链接
     @RequestMapping("/user/")
     public ModelAndView index2(ModelAndView mv){
@@ -34,13 +37,12 @@ public class UserController {
         User user = userService.login(loginname, password);
         if(user != null){
             // 将用户保存到HttpSession当中
-            System.out.println("HttpSession");
+            session.setAttribute("sumData",sumDataService.getSumData());
             session.setAttribute(Constants.USER_SESSION, user);
             // 客户端跳转到main页面
             mv.setViewName("redirect:/index");
         }else{
             // 设置登录失败提示信息
-            System.out.println("设置登录失败提示信息");
             mv.addObject("message", "登录名或密码错误!请重新输入");
             // 服务器内部跳转到登录页面
             mv.setViewName("forward:/loginForm");
@@ -72,7 +74,6 @@ public class UserController {
     }
     @PostMapping("/user/add")
     public ModelAndView add(ModelAndView mv, @ModelAttribute User notice , Integer id){
-        System.out.println(id);
         if(id!=null){
             userService.update_UserInfo(notice);
         }else{
@@ -83,7 +84,6 @@ public class UserController {
     }
     @RequestMapping("/user/delete")
     public void delete(Integer id){
-        System.out.println(id);
         if(id!=null){
             userService.delete_UserInfo(id);
         }

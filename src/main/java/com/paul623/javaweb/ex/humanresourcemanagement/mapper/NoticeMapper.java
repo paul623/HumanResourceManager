@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants.NOTICETABLE;
 
+
 @Mapper
 public interface NoticeMapper {
     @Select("select * from "+NOTICETABLE+" ")
@@ -29,4 +30,7 @@ public interface NoticeMapper {
     // 根据id删除部门
     @Delete(" delete from "+NOTICETABLE+" where id = #{id} ")
     void delete_Info(Integer id);
+
+    @Select("select count(*) from "+NOTICETABLE+" ")
+    public int getNum();
 }

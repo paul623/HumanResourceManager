@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 /** 
  * 判断用户权限的Spring MVC的拦截器
  */
-@Component
 public class AuthorizedInterceptor implements HandlerInterceptor {
 
 	/** 定义不需要拦截的请求 */
@@ -50,15 +49,13 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object handler) throws Exception {
 		/** 默认用户没有登录 */
-		boolean flag = false; 
+		boolean flag = false;
 		/** 获得请求的ServletPath */
 		String servletPath = request.getServletPath();
-		System.out.println(servletPath);
 		/**  判断请求是否需要拦截 */
         for (String s : IGNORE_URI) {
             if (servletPath.contains(s)) {
                 flag = true;
-                System.out.println("*********************");
                 break;
             }
         }
@@ -71,13 +68,14 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
         		 /** 如果用户没有登录，跳转到登录页面 */
         		request.setAttribute("message", "请先登录再访问网站!");
         		request.getRequestDispatcher(Constants.LOGIN).forward(request, response);
-        		return flag;
+        		return false;
         	}else{
-        		 flag = true;
+        		return true;
         	}
-        }
-        return flag;
-		
+        }else {
+        	return true;
+		}
+
 	}
 
 }

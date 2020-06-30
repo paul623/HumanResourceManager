@@ -2,12 +2,12 @@ package com.paul623.javaweb.ex.humanresourcemanagement.utils;
 
 public class Constants {
 	// 数据库表常量
-		public static final String USERTABLE = "user_inf";
-		public static final String DEPTTABLE = "dept_inf";
-		public static final String JOBTABLE = "job_inf";
-		public static final String EMPLOYEETABLE = "employee_inf";
-		public static final String NOTICETABLE = "notice_inf";
-		public static final String DOCUMENTTABLE = "document_inf";
+		public static final String USERTABLE = "user";
+		public static final String DEPTTABLE = "dept";
+		public static final String JOBTABLE = "job";
+		public static final String EMPLOYEETABLE = "employee";
+		public static final String NOTICETABLE = "notice";
+		public static final String DOCUMENTTABLE = "document";
 		
 		// 登录
 		public static final String LOGIN = "loginForm";

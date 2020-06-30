@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
 <!DOCTYPE html>
 <html>
   
@@ -92,16 +93,16 @@
           
         </tbody>
       </table>
-      <div class="page">
-        <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">3</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
+        <div class="page">
+            <div>
+                <a class="prev" href="">&lt;&lt;</a>
+                <span class="current">1</span>
+                <a class="num" href="">2</a>
+                <a class="num" href="">3</a>
+                <a class="num" href="">..</a>
+                <a class="next" href="">&gt;&gt;</a>
+            </div>
         </div>
-      </div>
 
     </div>
     <script>

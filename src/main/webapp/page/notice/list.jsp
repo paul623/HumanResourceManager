@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
 <!DOCTYPE html>
 <html>
   
@@ -71,8 +72,8 @@
             <td>${dept.id}</td>
             <td>${dept.title }</td>
             <td>${dept.content }</td>
-            <td>${dept.create_date }</td>
-            <td>${dept.user.name }</td>
+            <td>${dept.createDate }</td>
+            <td>${dept.user.username }</td>
             
            <!--  <td class="td-status">
               <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td> -->
@@ -81,7 +82,7 @@
                 <i class="layui-icon">&#xe601;</i>
               </a> -->
               <%-- <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/job/add?id=${dept.id }');" href="javascript:;"> --%>
-              <a title="编辑"  href="${ctx}/notice/add?id=${dept.id }">
+              <a title="编辑"  href="/notice/add?id=${dept.id }">
                 <i class="layui-icon">&#xe642;</i>
               </a>
               <a title="删除" onclick="member_del(this,'${dept.id }')" href="javascript:;">
@@ -97,17 +98,16 @@
           
         </tbody>
       </table>
-      <div class="page">
-        <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">3</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
+        <div class="page">
+            <div>
+                <a class="prev" href="">&lt;&lt;</a>
+                <span class="current">1</span>
+                <a class="num" href="">2</a>
+                <a class="num" href="">3</a>
+                <a class="num" href="">..</a>
+                <a class="next" href="">&gt;&gt;</a>
+            </div>
         </div>
-      </div>
-
     </div>
     <script>
       layui.use('laydate', function(){

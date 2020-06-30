@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants.DEPTTABLE;
 
+
 @Mapper
 public interface DeptMapper {
     //查询
@@ -31,4 +32,7 @@ public interface DeptMapper {
     // 根据id删除部门
     @Delete(" delete from "+DEPTTABLE+" where id = #{id} ")
     public void delete_Info(Integer id);
+
+    @Select("select count(*) from "+DEPTTABLE+" ")
+    public int getNum();
 }

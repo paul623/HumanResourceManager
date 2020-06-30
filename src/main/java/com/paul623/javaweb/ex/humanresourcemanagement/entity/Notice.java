@@ -6,12 +6,20 @@ public class Notice implements Serializable {
     private Integer id;
     private String title;
     private String content;
-    private String Create_date;
-    private Integer user_id;
+    private String createDate;
+    private Integer userId;
     private User user;
 
-    public Notice() {
-        super();
+    @Override
+    public String toString() {
+        return "Notice{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", createDate='" + createDate + '\'' +
+                ", userId=" + userId +
+                ", user=" + user +
+                '}';
     }
 
     public Integer getId() {
@@ -38,20 +46,20 @@ public class Notice implements Serializable {
         this.content = content;
     }
 
-    public String getCreate_date() {
-        return Create_date;
+    public String getCreateDate() {
+        return createDate;
     }
 
-    public void setCreate_date(String create_date) {
-        Create_date = create_date;
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public User getUser() {
@@ -60,17 +68,5 @@ public class Notice implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    @Override
-    public String toString() {
-        return "Notice{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", Create_date='" + Create_date + '\'' +
-                ", user_id=" + user_id +
-                ", user=" + user +
-                '}';
     }
 }

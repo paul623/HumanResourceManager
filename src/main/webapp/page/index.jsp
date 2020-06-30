@@ -30,11 +30,11 @@
         
         <ul class="layui-nav right" lay-filter="">
           <li class="layui-nav-item">
-            <a href="javascript:;">admin</a>
+            <a href="javascript:;">${sessionScope.user_session.loginname}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-              <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
-              <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
-              <dd><a href="./login.html">退出</a></dd>
+              <!--<dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
+              <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>-->
+              <dd><a href="/">退出</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item to-index"><a>欢迎登录</a></li>
@@ -55,14 +55,14 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="${ctx }/user/list">
+                        <a _href="/user/list">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>用户列表</cite>
                             
                         </a>
                     </li >
                     <li>
-                        <a _href="${ctx }/user/add">
+                        <a _href="/user/add">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>添加用户</cite>
                             
@@ -79,13 +79,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="${ctx }/dept/list">
+                        <a _href="/dept/list">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>部门列表</cite>
                         </a>
                     </li >
                     <li>
-                        <a _href="${ctx }/dept/add">
+                        <a _href="/dept/add">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>添加部门</cite>
                         </a>
@@ -100,13 +100,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="${ctx }/job/list">
+                        <a _href="/job/list">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>职位列表</cite>
                         </a>
                     </li >
                      <li>
-                        <a _href="${ctx }/job/add">
+                        <a _href="/job/add">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>添加职位</cite>
                         </a>
@@ -122,13 +122,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="${ctx }/employee/list">
+                        <a _href="/employee/list">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>员工列表</cite>
                         </a>
                     </li >
                     <li>
-                        <a _href="${ctx }/employee/add">
+                        <a _href="/employee/add">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>添加员工</cite>
                         </a>
@@ -143,13 +143,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="${ctx }/notice/list">
+                        <a _href="/notice/list">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>公告查询</cite>
                         </a>
                     </li >
                     <li>
-                        <a _href="${ctx }/notice/add">
+                        <a _href="/notice/add">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>添加公告</cite>
                         </a>
@@ -166,13 +166,13 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="${ctx }/document/list">
+                        <a _href="/document/list">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>文档查询</cite>
                         </a>
                     </li>
                     <li>
-                        <a _href="${ctx }/document/add">
+                        <a _href="/document/add">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>上传文档</cite>
                         </a>
@@ -192,7 +192,7 @@
           </ul>
           <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe src='${ctx}/welcome' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                <iframe src='/welcome' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
             </div>
           </div>
         </div>
@@ -202,7 +202,7 @@
     <!-- 中部结束 -->
     <!-- 底部开始 -->
     <div class="footer">
-        <div class="copyright">Copyright ©2017 x-admin v2.3 All Rights Reserved</div>  
+        <div class="copyright">Copyright ©2020 Paul623 v0.0.1 All Rights Reserved</div>
     </div>
     <!-- 底部结束 -->
  

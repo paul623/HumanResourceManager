@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants.JOBTABLE;
 
+
 @Mapper
 public interface JobMapper {
     //查询
@@ -31,4 +32,7 @@ public interface JobMapper {
     // 根据id删除部门
     @Delete(" delete from "+JOBTABLE+" where id = #{id} ")
     void delete_Info(Integer id);
+
+    @Select("select count(*) from "+JOBTABLE+" ")
+    public int getNum();
 }

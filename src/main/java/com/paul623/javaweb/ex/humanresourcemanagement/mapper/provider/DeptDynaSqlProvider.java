@@ -26,7 +26,6 @@ public class DeptDynaSqlProvider {
 		}	
 		// 动态更新
 		public String updateDept(Dept dept){
-			
 			return new SQL(){
 				{
 					UPDATE(DEPTTABLE);

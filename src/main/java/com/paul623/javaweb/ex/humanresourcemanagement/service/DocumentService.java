@@ -2,6 +2,7 @@ package com.paul623.javaweb.ex.humanresourcemanagement.service;
 
 import com.paul623.javaweb.ex.humanresourcemanagement.entity.Document;
 import com.paul623.javaweb.ex.humanresourcemanagement.mapper.DocumentMapper;
+import com.paul623.javaweb.ex.humanresourcemanagement.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,15 +12,29 @@ import java.util.List;
 public class DocumentService {
     @Autowired
     DocumentMapper documentMapper;
+    @Autowired
+    UserMapper userMapper;
     /**
      * 文档管理
      */
     public List<Document> get_DocumentList() {
-        return documentMapper.get_List();
+        List<Document> documents=documentMapper.get_List();
+        for(Document document:documents){
+            if(document.getUserId()!=null){
+                document.setUser(userMapper.get_Info(document.getUserId()));
+            }
+        }
+        return documents;
     }
 
     public List<Document> get_DocumentLikeList(String content) {
-        return documentMapper.get_LikeList(content);
+        List<Document> documents=documentMapper.get_LikeList(content);
+        for(Document document:documents){
+            if(document.getUserId()!=null){
+                document.setUser(userMapper.get_Info(document.getUserId()));
+            }
+        }
+        return documents;
     }
 
     public Document get_DocumentInfo(Integer id) {

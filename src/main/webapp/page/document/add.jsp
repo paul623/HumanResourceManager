@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
 <!DOCTYPE html>
 <html>
   
@@ -24,7 +25,7 @@
   
   <body>
     <div class="x-body">
-        <form class="layui-form" method="POST" id="deptForm" enctype="multipart/form-data" action="${ctx}/document/add">
+        <form class="layui-form" method="POST" id="deptForm" enctype="multipart/form-data" action="/document/add">
         <input type="hidden" name="id" id="id" value="${job.id }" >
           <div class="layui-form-item">
               <label for="username" class="layui-form-label">
