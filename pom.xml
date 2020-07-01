@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.paul623.javaweb.ex</groupId>
     <artifactId>humanresourcemanagement</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-ALPHA</version>
     <name>humanresourcemanagement</name>
     <description>Demo project for Spring Boot</description>
 
