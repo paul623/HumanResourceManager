@@ -222,7 +222,7 @@ xblock{
 .container{
     width: 100%;
     height: 45px;
-    background-color: #222;
+    background-color: #666699;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .container .logo a{
@@ -280,7 +280,7 @@ xblock{
     cursor: pointer;
 }
 .layui-nav .layui-nav-child a{
-    color: #333;
+    color: 	#6495ED;
     cursor: pointer;
 }
 .left-nav{

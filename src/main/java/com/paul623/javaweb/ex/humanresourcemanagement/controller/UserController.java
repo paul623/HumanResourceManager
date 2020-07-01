@@ -1,5 +1,6 @@
 package com.paul623.javaweb.ex.humanresourcemanagement.controller;
 
+import com.paul623.javaweb.ex.humanresourcemanagement.entity.Employee;
 import com.paul623.javaweb.ex.humanresourcemanagement.entity.User;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.SumDataService;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.UserService;
@@ -31,16 +32,30 @@ public class UserController {
     @RequestMapping("/login")
     public ModelAndView login(String loginname,
                               String password,
+                              int permission,
                               HttpSession session,
                               ModelAndView mv){
-        // 调用业务逻辑组件判断用户是否可以登录
-        User user = userService.login(loginname, password);
-        if(user != null){
-            // 将用户保存到HttpSession当中
-            session.setAttribute("sumData",sumDataService.getSumData());
-            session.setAttribute(Constants.USER_SESSION, user);
-            // 客户端跳转到main页面
-            mv.setViewName("redirect:/index");
+        Object temp = userService.login(loginname, password,permission);
+        if(temp != null){
+            switch (permission){
+                case 0:
+                    User user=(User)temp;
+                    // 将用户保存到HttpSession当中
+                    session.setAttribute("sumData",sumDataService.getSumData());
+                    session.setAttribute(Constants.USER_SESSION, user);
+                    // 客户端跳转到main页面
+                    mv.setViewName("redirect:/index");
+                    break;
+                case 1:
+                    Employee employee=(Employee)temp;
+                    // 将用户保存到HttpSession当中
+                    session.setAttribute("sumData",sumDataService.getSumData());
+                    session.setAttribute(Constants.USER_SESSION, employee);
+                    // 客户端跳转到main页面
+                    mv.setViewName("redirect:/index-normal");
+                    break;
+            }
+
         }else{
             // 设置登录失败提示信息
             mv.addObject("message", "登录名或密码错误!请重新输入");

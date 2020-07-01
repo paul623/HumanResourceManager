@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.SelectProvider;
 import java.util.List;
 
 import static com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants.EMPLOYEETABLE;
+import static com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants.USERTABLE;
 
 
 @Mapper
@@ -39,4 +40,7 @@ public interface EmployeeMapper {
 
     @Select("select count(*) from "+EMPLOYEETABLE+" ")
     public int getNum();
+
+    @Select("select * from "+EMPLOYEETABLE+"  where id = #{id} AND password = #{password}")
+    public Employee get_login(String id,String password);
 }

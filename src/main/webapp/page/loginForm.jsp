@@ -31,6 +31,11 @@
             <hr class="hr15">
             <input name="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
             <hr class="hr15">
+            <div class="layui-input-block">
+                <input type="radio" name="permission" value="0" title="系统管理员">
+                <input type="radio" name="permission" value="1" title="员工登录" checked>
+            </div>
+            <hr class="hr15">
             <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
             <hr class="hr20" >
         </form>

@@ -66,7 +66,7 @@ public class DocumentController {
              */
             //String path = session.getServletContext().getRealPath("/upload/");
             String filename = document.getFile().getOriginalFilename();
-            String path = System.getProperty("user.dir")+"\\doc";
+            String path = System.getProperty("user.dir")+ java.io.File.separator+"doc";
             File tempFile = new File(path+File.separator+filename);
             if (!tempFile.getParentFile().exists()){
                 tempFile.getParentFile().mkdirs();

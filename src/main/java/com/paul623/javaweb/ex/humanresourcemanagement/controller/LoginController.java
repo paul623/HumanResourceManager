@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
     @RequestMapping("/")
     public String getLogin(HttpServletRequest request){
-        System.out.println("测试！！！！接收请求");
         request.setAttribute("message", "");
         return "loginForm";
     }

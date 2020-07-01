@@ -71,6 +71,9 @@ public class EmployeeDynaSqlProvider {
 						if(job.getJobId()!=null){
 							VALUES("jobId","#{jobId}");
 						}
+						if(job.getPassword()!=null){
+							VALUES("password","#{password}");
+						}
 					}
 				}.toString();
 			}	
@@ -82,6 +85,9 @@ public class EmployeeDynaSqlProvider {
 						UPDATE(EMPLOYEETABLE);
 						if(job.getName() != null ){
 							SET("name = #{name}");
+						}
+						if(job.getPassword()!=null){
+							SET("password =#{password}");
 						}
 						if(job.getCardId()!=null){
 							SET("cardId = #{cardId}");

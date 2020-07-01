@@ -100,6 +100,21 @@
             </div>
         </fieldset>
         <fieldset class="layui-elem-field">
+            <legend>更新日志</legend>
+            <div class="layui-field-box">
+                <table class="layui-table" lay-skin="line">
+                    <tbody>
+                    <tr>
+                        <td >
+                            <a class="x-a" target="_blank">新增员工登录系统，鉴权，拦截器（2020.07.01）</a>
+                            <a class="x-a" target="_blank">修复诸多问题，测试文档上传稳定性（2020.06.30）</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset class="layui-elem-field">
             <legend>系统信息</legend>
             <div class="layui-field-box">
                 <table class="layui-table">
@@ -139,7 +154,7 @@
                     <tbody>
                         <tr>
                             <th>开发者</th>
-                            <td><a href="https://github.com/paul623" class='x-a' target="_blank">Paul623</a></td>
+                            <td><a href="https://github.com/paul623" class='x-a' target="_blank">paul623</a></td>
                         </tr>
                         <tr>
                             <th>组员</th>

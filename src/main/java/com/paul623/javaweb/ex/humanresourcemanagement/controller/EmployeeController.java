@@ -6,6 +6,7 @@ import com.paul623.javaweb.ex.humanresourcemanagement.entity.Job;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.DeptService;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.EmployeeService;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.JobService;
+import com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -74,5 +76,28 @@ public class EmployeeController {
         if(id!=null){
             jobService.delete_JobInfo(id);
         }
+    }
+    @GetMapping("/employee/rePassword")
+    public String getRePassword(){
+        return "/employee/rePassword";
+    }
+    @PostMapping("/employee/rePassword")
+    public ModelAndView updatePassWord(ModelAndView mv,HttpSession session,String old_pass,String password,String c_password){
+        Employee user=(Employee) session.getAttribute(Constants.USER_SESSION);
+        System.out.println(user);
+        if(user.getPassword().equals(old_pass)){
+            if(password.equals(c_password)){
+                user.setPassword(password);
+                employeeService.update_EmployeeInfo(user);
+                session.setAttribute("msg",null);
+                session.setAttribute("msg_s","修改成功！");
+            }else {
+                session.setAttribute("msg","两次密码不一致");
+            }
+        }else {
+            session.setAttribute("msg","密码不正确");
+        }
+        mv.setViewName("redirect:/employee/rePassword");
+        return mv;
     }
 }

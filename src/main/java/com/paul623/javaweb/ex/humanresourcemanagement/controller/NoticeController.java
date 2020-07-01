@@ -43,6 +43,16 @@ public class NoticeController {
         model.addAttribute("list",job_list);
         return "notice/list";
     }
+    @RequestMapping("/notice/list/view")
+    public String indexView(Model model, String content){
+        List<Notice> job_list = noticeService.get_NoticeList();
+        if (content!=null){
+            job_list = noticeService.get_NoticeLikeList(content);
+        }
+        System.out.println(job_list);
+        model.addAttribute("list",job_list);
+        return "notice/notice-view";
+    }
     @GetMapping("/notice/add")
     public String add(Model model,Integer id){
         if(id!=null){

@@ -6,6 +6,15 @@ public class Employee implements Serializable {
 	private Integer id;
 	private Integer jobId;
 	private Integer deptId;
+	private String password;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public Integer getJobId() {
 		return jobId;

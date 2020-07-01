@@ -1,6 +1,7 @@
 package com.paul623.javaweb.ex.humanresourcemanagement.service;
 
 import com.paul623.javaweb.ex.humanresourcemanagement.entity.User;
+import com.paul623.javaweb.ex.humanresourcemanagement.mapper.EmployeeMapper;
 import com.paul623.javaweb.ex.humanresourcemanagement.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,10 +12,20 @@ import java.util.List;
 public class UserService {
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    EmployeeMapper employeeMapper;
 
-    public User login(String loginname, String password) {
-        User user = userMapper.get_login(loginname,password);
-        return user;
+    public Object login(String loginname, String password,int permission) {
+        switch (permission){
+            case 0://管理员登录
+                return userMapper.get_login(loginname,password);
+            case 1:
+                return employeeMapper.get_login(loginname,password);
+            default:
+                return null;
+        }
+
+
     }
 
     public List<User> get_UserList() {
