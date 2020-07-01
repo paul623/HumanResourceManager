@@ -47,6 +47,16 @@ public class DocumentController {
         model.addAttribute("list",documents);
         return "document/list";
     }
+    @RequestMapping("/document/list/view")
+    public String indexView(Model model, String content){
+        List<Document> documents = documentService.get_DocumentList();
+        if (content!=null){
+            documents = documentService.get_DocumentLikeList(content);
+        }
+        System.out.println(documents);
+        model.addAttribute("list",documents);
+        return "document/list-view";
+    }
     @GetMapping("/document/add")
     public String add(Model model,Integer id){
         if(id!=null){

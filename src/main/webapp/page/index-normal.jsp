@@ -22,7 +22,7 @@
 <body>
 <!-- 顶部开始 -->
 <div class="container">
-    <div class="logo"><a href="./index">人事管理系统</a></div>
+    <div class="logo"><a href="${pageContext.request.contextPath}/index-normal">人事管理系统</a></div>
     <div class="left_open">
         <i title="展开左侧栏" class="iconfont">&#xe699;</i>
     </div>
@@ -69,7 +69,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="/document/list">
+                        <a _href="/document/list/view">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>文档查询</cite>
                         </a>
@@ -99,7 +99,7 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ©2020 Paul623 v0.0.1 All Rights Reserved</div>
+    <div class="copyright">Copyright ©2020 Paul623 v0.0.2 All Rights Reserved</div>
 </div>
 <!-- 底部结束 -->
 

@@ -199,7 +199,7 @@
     <!-- 中部结束 -->
     <!-- 底部开始 -->
     <div class="footer">
-        <div class="copyright">Copyright ©2020 Paul623 v0.0.1 All Rights Reserved</div>
+        <div class="copyright">Copyright ©2020 Paul623 v0.0.2 All Rights Reserved</div>
     </div>
     <!-- 底部结束 -->
  
