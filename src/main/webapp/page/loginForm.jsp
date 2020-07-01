@@ -23,7 +23,7 @@
 <body class="login-bg">
     
     <div class="login layui-anim layui-anim-up">
-        <div class="message">后台登录-人事管理系统v0.0.1</div>
+        <div class="message">后台登录-人事管理系统v0.0.2</div>
         <div id="darkbannerwrap"></div>
         ${requestScope.message}
         <form method="post" class="layui-form" action="${ctx}/login">

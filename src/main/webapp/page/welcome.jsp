@@ -121,7 +121,7 @@
                     <tbody>
                         <tr>
                             <th>系统版本号</th>
-                            <td>v0.0.1</td></tr>
+                            <td>v0.0.2</td></tr>
                         <tr>
                             <th>服务器地址</th>
                             <td>localhost:8080</td></tr>
