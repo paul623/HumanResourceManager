@@ -30,7 +30,7 @@ public interface EmployeeMapper {
     void insert_Info(Employee employee);
 
     @Select("select * from "+EMPLOYEETABLE+" where id = #{id}")
-    public Employee get_Info(Integer id);
+    public Employee get_Info(String id);
 
     @SelectProvider(type= EmployeeDynaSqlProvider.class,method="update_Employee")
     void update_Info(Employee employee);
@@ -41,6 +41,6 @@ public interface EmployeeMapper {
     @Select("select count(*) from "+EMPLOYEETABLE+" ")
     public int getNum();
 
-    @Select("select * from "+EMPLOYEETABLE+"  where id = #{id} AND password = #{password}")
+    @Select("select * from "+EMPLOYEETABLE+"  where id = #{id} OR phone=#{id} AND password = #{password}")
     public Employee get_login(String id,String password);
 }

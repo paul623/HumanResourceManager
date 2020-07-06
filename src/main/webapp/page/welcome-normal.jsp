@@ -16,7 +16,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/xadmin.css">
 </head>
@@ -99,7 +99,8 @@
                 <tbody>
                 <tr>
                     <td >
-                        <a class="x-a" href="/" target="_blank">v0.0.1开始内测</a>
+                        <a class="x-a" href="/" target="_blank">v0.0.3开始内测</a><br/><br/>
+                        <a class="x-a" href="/" target="_blank">绑定手机后就可以使用手机登录啦！</a>
                     </td>
                 </tr>
                 </tbody>
@@ -115,26 +116,35 @@
                     <th>工号</th>
                     <td>${sessionScope.user_session.id}</td></tr>
                 <tr>
+                    <th>部门</th>
+                    <td>${sessionScope.deptName}</td></tr>
+                <tr>
+                    <th>职位</th>
+                    <td>${sessionScope.jobName}</td></tr>
+                <tr>
                     <th>姓名</th>
                     <td>${sessionScope.user_session.name}</td></tr>
                 <tr>
-                    <th>操作系统</th>
-                    <td>Windows/Linux</td></tr>
+                    <th>生日</th>
+                    <td>${sessionScope.user_session.birthday}</td></tr>
                 <tr>
-                    <th>运行环境</th>
-                    <td>jdk 1.8及以上</td></tr>
+                    <th>民族</th>
+                    <td>${sessionScope.user_session.party}</td></tr>
                 <tr>
-                    <th>MYSQL版本</th>
-                    <td>8.0</td></tr>
+                    <th>住址</th>
+                    <td>${sessionScope.user_session.address}</td></tr>
                 <tr>
-                    <th>上传附件限制</th>
-                    <td>2M</td></tr>
+                    <th>通信邮箱</th>
+                    <td>${sessionScope.user_session.email}</td></tr>
                 <tr>
-                    <th>执行时间限制</th>
-                    <td>30s</td></tr>
+                    <th>QQ</th>
+                    <td>${sessionScope.user_session.qqNum}</td></tr>
                 <tr>
-                    <th>剩余空间</th>
-                    <td>/</td></tr>
+                    <th>爱好</th>
+                    <td>${sessionScope.user_session.hobby}</td></tr>
+                <tr>
+                    <th>特长</th>
+                    <td>${sessionScope.user_session.speciality}</td></tr>
                 </tbody>
             </table>
         </div>

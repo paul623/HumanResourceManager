@@ -3,9 +3,11 @@ package com.paul623.javaweb.ex.humanresourcemanagement.controller;
 import com.paul623.javaweb.ex.humanresourcemanagement.entity.Dept;
 import com.paul623.javaweb.ex.humanresourcemanagement.entity.Employee;
 import com.paul623.javaweb.ex.humanresourcemanagement.entity.Job;
+import com.paul623.javaweb.ex.humanresourcemanagement.entity.SumData;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.DeptService;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.EmployeeService;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.JobService;
+import com.paul623.javaweb.ex.humanresourcemanagement.service.SumDataService;
 import com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +29,8 @@ public class EmployeeController {
     JobService jobService;
     @Autowired
     DeptService deptService;
+    @Autowired
+    SumDataService sumDataService;
 
     @RequestMapping("/employee/")
     public ModelAndView index2(ModelAndView mv){
@@ -49,7 +53,7 @@ public class EmployeeController {
         return "employee/list";
     }
     @GetMapping("/employee/add")
-    public String add(Model model,Integer id){
+    public String add(Model model,String id){
         if(id!=null){
             Employee employee = employeeService.get_EmployeeInfo(id);
             model.addAttribute("job",employee);
@@ -99,5 +103,33 @@ public class EmployeeController {
         }
         mv.setViewName("redirect:/employee/rePassword");
         return mv;
+    }
+
+    @GetMapping("/employee/updateInfo")
+    public String getUpdateInfo(Model model,HttpSession session){
+        Employee user=(Employee) session.getAttribute(Constants.USER_SESSION);
+        model.addAttribute("data",user);
+        return "/employee/updateInfo";
+    }
+    @PostMapping("/employee/updateInfo")
+    public ModelAndView updateInfo(ModelAndView mv,@ModelAttribute Employee employee,HttpSession session){
+        System.out.println("系统拦截："+employee);
+        Employee user=(Employee) session.getAttribute(Constants.USER_SESSION);
+        employee.setId(user.getId());
+        employeeService.update_EmployeeInfo(employee);
+        session.setAttribute("msg","修改成功！");
+        employee=employeeService.get_EmployeeInfo(employee.getId()+"");
+        session.setAttribute(Constants.USER_SESSION,employee);//更新一下
+        mv.setViewName("redirect:/employee/updateInfo");
+        return mv;
+    }
+    @RequestMapping("/employee/getMoreInfo")
+    public String  getMoreInfo(HttpSession session,String id){
+        Employee employee=employeeService.get_EmployeeInfo(id);
+        session.setAttribute("deptName",sumDataService.getDeptName(employee.getDeptId()));
+        session.setAttribute("jobName",sumDataService.getJobName(employee.getJobId()));
+        session.setAttribute("employee",employee);
+        System.out.println("？？？跳转了啊");
+        return "/employee/getInfo";
     }
 }

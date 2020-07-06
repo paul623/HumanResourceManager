@@ -10,7 +10,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../css/font.css">
     <link rel="stylesheet" href="../css/xadmin.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -83,6 +83,9 @@
              <!--  <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
                 <i class="layui-icon">&#xe601;</i>
               </a> -->
+                <a title="查看" onclick="x_admin_show('查看详情','/employee/getMoreInfo?id=${dept.id}')" href="javascript:;">
+                    <i class="layui-icon">&#xe702;</i>
+                </a>
               <a title="编辑"  href="/employee/add?id=${dept.id }">
                 <i class="layui-icon">&#xe642;</i>
               </a>

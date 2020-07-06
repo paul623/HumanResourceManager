@@ -37,8 +37,6 @@ public class Employee implements Serializable {
 	private String name;
 	private String cardId;
 	private String address;
-	private String postCode;
-	private String tel;
 	private String phone;
 	private String qqNum;
 	private String email;
@@ -46,11 +44,9 @@ public class Employee implements Serializable {
 	private String party;
 	
 	private String birthday;
-	private String race;
 	private String education;
 	private String speciality;
 	private String hobby;
-	private String remark;
 	private String createDate;
 	private String sexStr;
 
@@ -114,22 +110,6 @@ public class Employee implements Serializable {
 		this.address = address;
 	}
 
-	public String getPostCode() {
-		return postCode;
-	}
-
-	public void setPostCode(String postCode) {
-		this.postCode = postCode;
-	}
-
-	public String getTel() {
-		return tel;
-	}
-
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -178,14 +158,6 @@ public class Employee implements Serializable {
 		this.birthday = birthday;
 	}
 
-	public String getRace() {
-		return race;
-	}
-
-	public void setRace(String race) {
-		this.race = race;
-	}
-
 	public String getEducation() {
 		return education;
 	}
@@ -210,13 +182,6 @@ public class Employee implements Serializable {
 		this.hobby = hobby;
 	}
 
-	public String getRemark() {
-		return remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
 
 	public String getCreateDate() {
 		return createDate;
@@ -232,25 +197,23 @@ public class Employee implements Serializable {
 				"id=" + id +
 				", jobId=" + jobId +
 				", deptId=" + deptId +
+				", password='" + password + '\'' +
 				", dept=" + dept +
 				", job=" + job +
 				", name='" + name + '\'' +
 				", cardId='" + cardId + '\'' +
 				", address='" + address + '\'' +
-				", postCode='" + postCode + '\'' +
-				", tel='" + tel + '\'' +
 				", phone='" + phone + '\'' +
 				", qqNum='" + qqNum + '\'' +
 				", email='" + email + '\'' +
 				", sex=" + sex +
 				", party='" + party + '\'' +
 				", birthday='" + birthday + '\'' +
-				", race='" + race + '\'' +
 				", education='" + education + '\'' +
 				", speciality='" + speciality + '\'' +
 				", hobby='" + hobby + '\'' +
-				", remark='" + remark + '\'' +
 				", createDate='" + createDate + '\'' +
+				", sexStr='" + sexStr + '\'' +
 				'}';
 	}
 }

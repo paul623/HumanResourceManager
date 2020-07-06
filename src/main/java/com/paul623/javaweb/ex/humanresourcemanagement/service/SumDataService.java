@@ -31,5 +31,11 @@ public class SumDataService {
         return sumData;
     }
 
+    public String getDeptName(int id){
+        return deptMapper.get_Info(id).getName();
+    }
+    public String getJobName(int id){
+        return jobMapper.get_Info(id).getName();
+    }
 
 }

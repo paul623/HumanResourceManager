@@ -9,9 +9,15 @@
         <meta name="renderer" content="webkit">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-        <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="css/font.css">
         <link rel="stylesheet" href="css/xadmin.css">
+        <style type="text/css">
+            .updateTitle{
+                color: blue;
+                font-style: italic;
+            }
+        </style>
     </head>
     <body >
     <script>
@@ -92,7 +98,7 @@
                     <tbody>
                         <tr>
                             <td >
-                                <a class="x-a" href="/" target="_blank">v0.0.1开始内测</a>
+                                <a class="x-a" href="/" target="_blank">v0.0.3开始内测</a>
                             </td>
                         </tr>
                     </tbody>
@@ -105,9 +111,23 @@
                 <table class="layui-table" lay-skin="line">
                     <tbody>
                     <tr>
+                        <td>
+                            <h4 class="updateTitle">2020.07.06 v0.0.3</h4>
+                            <p>新增用户个人信息修改<br/>调整拦截器配置，修复css、js等资源获取不到的问题<br/>主页可以查看个人信息了<br/>
+                                管理员可以查看雇员的完整信息<br/>雇员支持手机登录了<br/>配色调整及动画优化
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
                         <td >
-                            <a class="x-a" target="_blank">新增员工登录系统，鉴权，拦截器（2020.07.01）</a>
-                            <a class="x-a" target="_blank">修复诸多问题，测试文档上传稳定性（2020.06.30）</a>
+                            <h4 class="updateTitle">2020.07.01 v0.0.2</h4>
+                            <p>新增员工登录系统，鉴权，拦截器</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 class="updateTitle">2020.06.30 v0.0.1</h4>
+                            <p>修复诸多问题，测试文档上传稳定性</p>
                         </td>
                     </tr>
                     </tbody>

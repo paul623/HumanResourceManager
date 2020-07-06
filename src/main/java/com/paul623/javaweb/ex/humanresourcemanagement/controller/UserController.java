@@ -51,11 +51,13 @@ public class UserController {
                     // 将用户保存到HttpSession当中
                     session.setAttribute("sumData",sumDataService.getSumData());
                     session.setAttribute(Constants.USER_SESSION, employee);
+                    session.setAttribute("deptName",sumDataService.getDeptName(employee.getDeptId()));
+                    session.setAttribute("jobName",sumDataService.getJobName(employee.getJobId()));
                     // 客户端跳转到main页面
                     mv.setViewName("redirect:/index-normal");
                     break;
             }
-
+            session.setMaxInactiveInterval(30*60);
         }else{
             // 设置登录失败提示信息
             mv.addObject("message", "登录名或密码错误!请重新输入");

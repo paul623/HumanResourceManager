@@ -23,12 +23,6 @@ public class EmployeeDynaSqlProvider {
 						if(job.getAddress()!=null){
 							VALUES("address","#{address}");
 						}
-						if(job.getPostCode()!=null){
-							VALUES("postCode","#{postCode}");
-						}
-						if(job.getTel()!=null){
-							VALUES("tel","#{tel}");
-						}
 						if(job.getPhone()!=null){
 							VALUES("phone","#{phone}");
 						}
@@ -47,9 +41,7 @@ public class EmployeeDynaSqlProvider {
 						if(job.getBirthday()!=null){
 							VALUES("birthday","#{birthday}");
 						}
-						if(job.getRace()!=null){
-							VALUES("race","#{race}");
-						}
+
 						if(job.getEducation()!=null){
 							VALUES("education","#{education}");
 						}
@@ -58,9 +50,6 @@ public class EmployeeDynaSqlProvider {
 						}
 						if(job.getHobby()!=null){
 							VALUES("hobby","#{hobby}");
-						}
-						if(job.getRemark()!=null){
-							VALUES("remark","#{remark}");
 						}
 						if(job.getCreateDate()!=null){
 							VALUES("createDate","#{createDate}");
@@ -95,12 +84,6 @@ public class EmployeeDynaSqlProvider {
 						if(job.getAddress()!=null){
 							SET("address = #{address}");
 						}
-						if(job.getPostCode()!=null){
-							SET("postCode = #{postCode}");
-						}
-						if(job.getTel()!=null){
-							SET("tel = #{tel}");
-						}
 						if(job.getPhone()!=null){
 							SET("phone = #{phone}");
 						}
@@ -119,9 +102,6 @@ public class EmployeeDynaSqlProvider {
 						if(job.getBirthday()!=null){
 							SET("birthday = #{birthday}");
 						}
-						if(job.getRace()!=null){
-							SET("race = #{race}");
-						}
 						if(job.getEducation()!=null){
 							SET("education = #{education}");
 						}
@@ -130,9 +110,6 @@ public class EmployeeDynaSqlProvider {
 						}
 						if(job.getHobby()!=null){
 							SET("hobby = #{hobby}");
-						}
-						if(job.getRemark()!=null){
-							SET("remark = #{remark}");
 						}
 						if(job.getCreateDate()!=null){
 							SET("createDate = #{createDate}");

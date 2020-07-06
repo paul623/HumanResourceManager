@@ -58,7 +58,7 @@ public class EmployeeService {
         return list2;
     }
 
-    public Employee get_EmployeeInfo(Integer id) {
+    public Employee get_EmployeeInfo(String id) {
         Employee data = employeeMapper.get_Info(id);
         Dept dept = deptMapper.get_Info(data.getDeptId());
         data.setDept(dept);
