@@ -15,13 +15,29 @@
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/font.css">
 	<link rel="stylesheet" href="css/xadmin.css">
+    <link rel="stylesheet" type="text/css" href="css/loginStyle.css">
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/xadmin.js"></script>
 
 </head>
 <body class="login-bg">
-    
+    <div class="htmleaf-container">
+    <div class="wrapper">
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
     <div class="login layui-anim layui-anim-up">
         <div class="message">后台登录-人事管理系统v0.0.3</div>
         <div id="darkbannerwrap"></div>

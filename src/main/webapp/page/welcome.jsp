@@ -112,6 +112,12 @@
                     <tbody>
                     <tr>
                         <td>
+                            <h4 class="updateTitle">2020.07.10 v0.0.3-release</h4>
+                            <p>新增首页特效，Duang</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <h4 class="updateTitle">2020.07.06 v0.0.3</h4>
                             <p>新增用户个人信息修改<br/>调整拦截器配置，修复css、js等资源获取不到的问题<br/>主页可以查看个人信息了<br/>
                                 管理员可以查看雇员的完整信息<br/>雇员支持手机登录了<br/>配色调整及动画优化
