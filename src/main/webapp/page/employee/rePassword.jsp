@@ -46,7 +46,7 @@
         <br/>
         <label class="layui-form-label">新密码</label>
         <div class="layui-input-block">
-            <input type="password" name="password" lay-verify="pass" autocomplete="off" placeholder="请输入新密码" class="layui-input">
+            <input type="password" name="password" lay-verify="required" autocomplete="off" placeholder="请输入新密码" class="layui-input">
         </div>
         <br />
         <label class="layui-form-label">确认密码</label>
@@ -61,5 +61,17 @@
         </div>
     </div>
 </form>
+<script type="text/javascript">
+    layui.use(['form'], function() {
+        var form = layui.form;
+        var $ = layui.$;
+        form.verify({
+            confirmPass:function(value){
+                if($('input[name = password]').val() !== value)
+                    return 'Oopps!!!!两次密码输入不一致哦！';
+            }
+        });
+    })
+</script>
 </body>
 </html>

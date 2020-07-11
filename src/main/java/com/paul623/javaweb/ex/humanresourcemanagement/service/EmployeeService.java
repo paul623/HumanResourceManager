@@ -6,6 +6,7 @@ import com.paul623.javaweb.ex.humanresourcemanagement.entity.Job;
 import com.paul623.javaweb.ex.humanresourcemanagement.mapper.DeptMapper;
 import com.paul623.javaweb.ex.humanresourcemanagement.mapper.EmployeeMapper;
 import com.paul623.javaweb.ex.humanresourcemanagement.mapper.JobMapper;
+import com.paul623.javaweb.ex.humanresourcemanagement.utils.DateHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -72,11 +73,7 @@ public class EmployeeService {
     }
 
     public void insert_EmployeeInfo(Employee data) {
-        Date date = new Date();
-        String year = String.format("%tY", date);
-        String month = String.format("%tB", date);
-        String day = String.format("%te", date);
-        data.setCreateDate(year+month+day);
+        data.setCreateDate(DateHelper.getCurDate());
         employeeMapper.insert_Info(data);
     }
     public void delete_EmployeeInfo(Integer id) {

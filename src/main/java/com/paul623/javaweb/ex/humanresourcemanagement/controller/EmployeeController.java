@@ -129,7 +129,6 @@ public class EmployeeController {
         session.setAttribute("deptName",sumDataService.getDeptName(employee.getDeptId()));
         session.setAttribute("jobName",sumDataService.getJobName(employee.getJobId()));
         session.setAttribute("employee",employee);
-        System.out.println("？？？跳转了啊");
         return "/employee/getInfo";
     }
 }

@@ -74,10 +74,6 @@
                 <td>${user.createdate }</td>
 
                 <td class="td-manage">
-                    <!--  <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                       <i class="layui-icon">&#xe601;</i>
-                     </a> -->
-                        <%-- <a title="编辑"  onclick="x_admin_show('编辑','${ctx}/job/add?id=${dept.id }');" href="javascript:;"> --%>
                     <a title="编辑" href="/user/add?id=${user.id }">
                         <i class="layui-icon">&#xe642;</i>
                     </a>
@@ -86,7 +82,6 @@
                     </a>
                 </td>
             </tr>
-
         </c:forEach>
 
 
@@ -119,30 +114,6 @@
         });
     });
 
-    /*用户-停用*/
-    function member_stop(obj, id) {
-        layer.confirm('确认要停用吗？', function (index) {
-
-            if ($(obj).attr('title') == '启用') {
-
-                //发异步把用户状态进行更改
-                $(obj).attr('title', '停用')
-                $(obj).find('i').html('&#xe62f;');
-
-                $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                layer.msg('已停用!', {icon: 5, time: 1000});
-
-            } else {
-                $(obj).attr('title', '启用')
-                $(obj).find('i').html('&#xe601;');
-
-                $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                layer.msg('已启用!', {icon: 5, time: 1000});
-            }
-
-        });
-    }
-
     /*用户-删除*/
     function member_del(obj, id) {
         layer.confirm('确认要删除吗？', function (index) {
@@ -166,13 +137,6 @@
         });
     }
 </script>
-<script>var _hmt = _hmt || [];
-(function () {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();</script>
 </body>
 
 </html>

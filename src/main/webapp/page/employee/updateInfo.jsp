@@ -24,38 +24,44 @@
         <div class="layui-form-item">
             <label class="layui-form-label">姓名</label>
             <div class="layui-input-block">
-                <input type="text" name="name" autocomplete="off" class="layui-input" value="${data.name}">
+                <input type="text" name="name" autocomplete="off"
+                       lay-verify="required" class="layui-input" value="${data.name}" >
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">手机号</label>
             <div class="layui-input-block">
-                <input type="text" name="phone" autocomplete="off" class="layui-input" value="${data.phone}" }>
+                <input type="text" name="phone" autocomplete="off"
+                       lay-verify="phone" class="layui-input" value="${data.phone}" }>
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">生日</label>
             <div class="layui-input-inline">
-                <input type="text" class="layui-input" id="birthday" name="birthday" placeholder="yyyy-MM-dd" value="${data.birthday}">
+                <input type="text" class="layui-input" id="birthday" name="birthday"
+                       lay-verify="date" placeholder="yyyy-MM-dd" value="${data.birthday}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">民族</label>
             <div class="layui-input-block">
-                <input type="text" name="party" autocomplete="off" class="layui-input" value="${data.party}">
+                <input type="text" name="party" autocomplete="off"
+                       lay-verify="required" class="layui-input" value="${data.party}">
             </div>
         </div>
         <div class="layui-form-item">
             <br/>
             <label class="layui-form-label">住址</label>
             <div class="layui-input-block">
-                <input type="text" name="address" autocomplete="off" class="layui-input" value="${data.address}">
+                <input type="text" name="address" autocomplete="off" ]
+                       lay-verify="required" class="layui-input" value="${data.address}">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">邮箱</label>
             <div class="layui-input-block">
-                <input type="text" name="email" autocomplete="off" class="layui-input" value="${data.email}">
+                <input type="text" name="email" autocomplete="off"
+                       lay-verify="email" class="layui-input" value="${data.email}">
             </div>
         </div>
         <div class="layui-form-item">
@@ -73,7 +79,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">专业技能</label>
             <div class="layui-input-block">
-                <textarea placeholder="请输入内容" class="layui-textarea" name="speciality" >${data.speciality}</textarea>
+                <textarea placeholder="请输入内容" class="layui-textarea"
+                          lay-verify="required" name="speciality" >${data.speciality}</textarea>
             </div>
         </div>
         </div>
@@ -90,6 +97,9 @@
             elem: '#birthday'
         });
     });
+    layui.use(['form'], function() {
+        var form = layui.form;
+    })
 </script>
 </body>
 </html>

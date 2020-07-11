@@ -5,6 +5,7 @@ import com.paul623.javaweb.ex.humanresourcemanagement.entity.User;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.SumDataService;
 import com.paul623.javaweb.ex.humanresourcemanagement.service.UserService;
 import com.paul623.javaweb.ex.humanresourcemanagement.utils.Constants;
+import com.paul623.javaweb.ex.humanresourcemanagement.utils.DateHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -94,6 +95,7 @@ public class UserController {
         if(id!=null){
             userService.update_UserInfo(notice);
         }else{
+            notice.setCreatedate(DateHelper.getCurDate());
             userService.insert_UserInfo(notice);
         }
         mv.setViewName("redirect:/user/list");
