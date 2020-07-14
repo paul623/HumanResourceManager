@@ -11,6 +11,6 @@ public class MyWebMvcConfigurer implements WebMvcConfigurer {
         AuthorizedInterceptor authorizedInterceptor=new AuthorizedInterceptor();
         registry.addInterceptor(authorizedInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/loginForm", "/login","/404.html","/css/**","/fonts/**","/images/**","/js/**","/lib/**","/favicon.ico","/error/**");
+                .excludePathPatterns("/loginForm", "/login","/404.html","/css/**","/fonts/**","/images/**","/js/**","/lib/**","/favicon.ico","/error/**","/home","/");
     }
 }

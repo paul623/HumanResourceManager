@@ -99,7 +99,7 @@
                 <tbody>
                 <tr>
                     <td >
-                        <a class="x-a" href="/" target="_blank">v0.0.3开始内测</a><br/><br/>
+                        <a class="x-a" href="/" target="_blank">v0.0.4开始内测</a><br/><br/>
                         <a class="x-a" href="/" target="_blank">绑定手机后就可以使用手机登录啦！</a>
                     </td>
                 </tr>
@@ -172,14 +172,5 @@
     </fieldset>
     <blockquote class="layui-elem-quote layui-quote-nm">感谢layui,jquery,本系统由paul623提供技术支持。</blockquote>
 </div>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
 </body>
 </html>

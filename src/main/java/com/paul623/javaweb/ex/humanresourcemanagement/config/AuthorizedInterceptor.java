@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthorizedInterceptor implements HandlerInterceptor {
 
 	/** 定义不需要拦截的请求 */
-	private static final String[] IGNORE_URI = {"/loginForm", "/login","/404.html","/css/**","/fonts/**","images/**","js/**","lib/**","favicon.ico","error/**"};
+	private static final String[] IGNORE_URI = {"/loginForm", "/login","/404.html","/css/**","/fonts/**","images/**","js/**","lib/**","/favicon.ico","error/**","/home/home"};
 	
 	 /** 
      * 该方法需要preHandle方法的返回值为true时才会执行。
@@ -52,6 +52,11 @@ public class AuthorizedInterceptor implements HandlerInterceptor {
 		boolean flag = false;
 		/** 获得请求的ServletPath */
 		String servletPath = request.getServletPath();
+		System.out.println("请求访问的网址:"+servletPath);
+		if(servletPath.equals("/")){
+			request.getRequestDispatcher("/home").forward(request, response);
+			return false;
+		}
 		/**  判断请求是否需要拦截 */
         for (String s : IGNORE_URI) {
             if (servletPath.contains(s)) {

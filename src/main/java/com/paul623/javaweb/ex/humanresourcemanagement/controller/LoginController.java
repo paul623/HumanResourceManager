@@ -8,10 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class LoginController {
-    @RequestMapping("/")
+    @RequestMapping("/home")
     public String getLogin(HttpServletRequest request){
         request.setAttribute("message", "");
-        return "loginForm";
+        return "home/home";
+    }
+    @RequestMapping("/")
+    public String getHomePage(HttpServletRequest request){
+        request.setAttribute("message", "");
+        return "home/home";
     }
 
     @RequestMapping("/{formName}")

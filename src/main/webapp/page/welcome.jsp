@@ -101,10 +101,7 @@
         <legend>系统通知</legend>
         <div class="layui-field-box">
             <table class="layui-table" lay-skin="line">
-
-
                 <div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
-
                     <button data-method="notice" class="layui-btn">更新说明</button>
                 </div>
 
@@ -116,6 +113,12 @@
         <div class="layui-field-box">
             <table class="layui-table" lay-skin="line">
                 <tbody>
+                <tr>
+                    <td>
+                        <h4 class="updateTitle">2020.07.14 v0.0.4</h4>
+                        <p>新增首页特效，Duang<br/>新增前台及后台数据可视化统计</p>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <h4 class="updateTitle">2020.07.10 v0.0.3-release</h4>
@@ -153,7 +156,7 @@
                 <tbody>
                 <tr>
                     <th>系统版本号</th>
-                    <td>v0.0.3</td>
+                    <td>v0.0.4</td>
                 </tr>
                 <tr>
                     <th>服务器地址</th>
