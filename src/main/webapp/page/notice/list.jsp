@@ -72,7 +72,7 @@
                 <td>${dept.createDate }</td>
                 <td>${dept.user.username }</td>
                 <td class="td-manage">
-                    <a title="编辑" href="notice/add?id=${dept.id }">
+                    <a title="编辑" href="/notice/add?id=${dept.id }">
                         <i class="layui-icon">&#xe642;</i>
                     </a>
                     <a title="删除" onclick="member_del(this,'${dept.id }')" href="javascript:;">
